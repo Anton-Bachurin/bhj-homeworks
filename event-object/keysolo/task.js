@@ -17,16 +17,16 @@ class Game {
   }
 
   registerEvents() {
-    const symbol = this.currentSymbol.textContent;
-    const keyboardSymbol = document.addEventListener('keyup', function (letter) {
-      return letter.key;
+    
+    document.addEventListener('keyup', e => {
+      const symbol = this.currentSymbol.textContent;
+      if (symbol === e.key) {
+        this.success();
+      } else {
+        this.fail();
+      };
     });
 
-    if (symbol === keyboardSymbol) {
-      this.success();
-    } else {
-      this.fail();
-    };
     /*
       TODO:
       Написать обработчик события, который откликается
@@ -100,7 +100,8 @@ class Game {
   }
 }
 
-new Game(document.getElementById('game'))
+new Game(document.getElementById('game'));
+
 
 
 

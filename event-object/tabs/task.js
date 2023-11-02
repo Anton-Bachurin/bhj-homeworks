@@ -1,8 +1,13 @@
-const tabs = [...document.querySelectorAll('.tab')];
-const tabsContent = [...document.querySelectorAll('.tab__content')];
+document.addEventListener('click', elem => {
+  const tab = elem.target.closest('.tab');
+  if (!tab) return;
+  tab.classList.add('tab_active');
+})
 
-for (i = 0; i < tabs.length; i++) {
-  tabs[i].onclick = function() {
-    tabs[i].classList.add('tab_active');
-  }
-};
+
+
+
+
+
+
+
