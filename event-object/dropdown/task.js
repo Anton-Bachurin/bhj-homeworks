@@ -12,5 +12,8 @@ dropdownList.onclick = function(elem) {
   const target = elem.target;
   if (!target.classList.contains('dropdown__link')) return;
   dropdownValue.textContent = target.textContent;
+  dropdownList.classList.remove(activeClassName);
+  return false;
 };
 
+  
