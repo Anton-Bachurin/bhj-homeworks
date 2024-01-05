@@ -12,11 +12,15 @@ document.addEventListener('click', elem => {
     let link = parent[i];
     link.classList.remove('font-size_active');
     letter.classList.add('font-size_active');
-    
-    if (link.classList.contains('font-size_active')) {
-      bookContent.classList.add(fontSizes[i]);
-    }
   } 
+
+  if (parent[0].classList.contains('font-size_active')) {
+    bookContent.classList.add('book_fs-small');
+  } else if (parent[1].classList.contains('font-size_active')) {
+    bookContent.classList.remove('book_fs-small book_fs-big'); 
+  } else if (parent[2].classList.contains('font-size_active')) {
+    bookContent.classList.add('book_fs-big');
+  }
 });
 
 
