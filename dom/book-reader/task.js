@@ -15,10 +15,12 @@ document.addEventListener('click', elem => {
   } 
 
   if (parent[0].classList.contains('font-size_active')) {
+    bookContent.classList.remove('book_fs-big');
     bookContent.classList.add('book_fs-small');
   } else if (parent[1].classList.contains('font-size_active')) {
     bookContent.classList.remove('book_fs-small', 'book_fs-big'); 
   } else if (parent[2].classList.contains('font-size_active')) {
+    bookContent.classList.remove('book_fs-small');
     bookContent.classList.add('book_fs-big');
   }
 });
